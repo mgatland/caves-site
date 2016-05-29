@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="880"
+   height="359.96875"
+   viewBox="0 0 704 287.975"
+   preserveAspectRatio="xMidYMid meet"
+   id="svg3013"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="caveslogo.svg">
+  <defs
+     id="defs3025" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview3023"
+     showgrid="false"
+     inkscape:zoom="0.7071068"
+     inkscape:cx="633.13483"
+     inkscape:cy="310.97211"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3013"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata3015">
+Created by potrace 1.12, written by Peter Selinger 2001-2015
+<rdf:RDF>
+  <cc:Work
+     rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:title />
+  </cc:Work>
+</rdf:RDF>
+</metadata>
+  <path
+     style="fill:#f2f2f2;stroke:none"
+     d="m 208,64 -80,160 32,0 64,-127 64,127 32,0 -80,-160 z"
+     id="path3118-4-0"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccccc" />
+  <path
+     style="fill:#f2f2f2;stroke:none"
+     d="m 16,255.975 -8,16 -8,16 672,0 8,-16 8,-16 z"
+     id="path3122-0"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccc" />
+  <path
+     style="fill:#f2f2f2;stroke:none"
+     d="m 48,0 -8,16 -8,16 640,0 8,-16 8,-16 z"
+     id="path3122"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccc" />
+  <path
+     style="fill:#f2f2f2;stroke:none"
+     d="m 48,64 -24,48 -24,48 16,32 16,32 32,0 32,0 8,-16 8,-16 -32,0 -32,0 -8,-16 -8,-16 16,-32 16,-32 48,0 48,0 -8,-16 -8,-16 -48,0 z"
+     id="path3120"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccccccccccccccccc" />
+  <path
+     style="fill:#f2f2f2;stroke:none"
+     d="m 192.04314,160 -16.26814,32 48.3,0 48.3,0 -16.26814,-32 -32.03186,0 -32.03186,0 z"
+     id="path3118"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#f2f2f2;stroke:none"
+     d="m 464,64 -32,64 -32,64 8,16 8,16 48,0 48,0 8,-16 8,-16 -48,0 -48,0 8,-16 8,-16 32,0 32,0 8,-16 8,-16 -32,0 -32,0 8,-16 8,-16 32,0 32,0 -8,-16 -8,-16 -32,0 z"
+     id="path3116"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccccccccccccccccccccccc" />
+  <path
+     style="fill:#f2f2f2;stroke:none"
+     d="m 592,64 -16,32 -16,32 32,0 16,-32 48,0 48,0 -8,-16 -8,-16 -48,0 z"
+     id="path3114"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccccccc" />
+  <path
+     style="fill:#f2f2f2;stroke:none"
+     d="M 304,65 295.7,80.5 288,96 319.7,159.5 352,223 384.3,159.5 416,96 408.3,80.5 400,65 l -24,47 -24,47 -24,-47 z"
+     id="path3112"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccccccccc" />
+  <path
+     style="fill:#f2f2f2;stroke:none"
+     d="m 560,128 8,16 8,16 48,0 48,0 -8,16 -8,16 -48,0 -48,0 -8,16 -8,16 64,0 64,0 16,-32 16,-32 -8,-16 -8,-16 -48,0 -48,0 z"
+     id="path3114-9"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccccccccccccccccc" />
+</svg>

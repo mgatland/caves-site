@@ -1,0 +1,62 @@
+html, body {
+	margin: 0;
+	width: 100%;
+	height:100%;
+	background-color: rgb(6,5,34);
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+}
+canvas {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 0
+}
+.content {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	text-align: center;
+	width: 100%;
+}
+.logo {
+	margin-top: 96px;
+	margin-bottom: 50px;
+	width:500px;
+	max-width:90%;
+}
+h2 {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.slim {
+	display: inline-block;
+	width: 650px;
+	max-width: 90%;
+}
+.video {
+	display: inline-block;
+	position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0px;
+  height: 0;
+  background-color: black;
+  width: 100%;
+}
+iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height:100%;
+}
+.box {
+	background-color: white;
+	color: black;
+	padding: 20px;
+	margin:20px;
+}
+img {
+	max-width: 100%;
+}
