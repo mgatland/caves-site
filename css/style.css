@@ -29,6 +29,15 @@ canvas {
 h2 {
 	font-size: 20px;
 	margin-bottom: 20px;
+	margin: 20px auto;
+	padding: 0px 10px;
+}
+.angled {
+	max-width: 650px;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+  padding: 20px;
+  border-image: url("/img/border.svg") 20 fill;
 }
 .slim {
 	display: inline-block;
@@ -52,8 +61,6 @@ iframe {
 	height:100%;
 }
 .box {
-	background-color: white;
-	color: black;
 	padding: 20px;
 	margin:20px;
 }
@@ -62,6 +69,27 @@ img {
 }
 a {
 	color: #b4edff; /* light blue */
+}
+
+.thumbs {
+	background-color: rgb(6,5,34);
+	display: flex;
+	justify-content: center;
+  align-items: center;
+}
+.thumbs img {
+	width: 11%;
+	align-self: center;
+	flex: 0 0 auto;
+	border: 1px solid white;
+	cursor: pointer;
+}
+.thumbs img:hover {
+	border: 1px solid yellow;
+}
+.display-selected-img {
+	border-top: 5px solid white;
+	border-bottom: 5px solid white;
 }
 
 /* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7

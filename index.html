@@ -10,14 +10,12 @@
   <canvas id="canvas"></canvas>
   <div class="content">
     <img src="img/caveslogo.svg" class="logo">
-    <h2>Story-driven exploration in a fully destructable world</h2>
-    <h2>A mining game with triangles instead of squares</h2>
+    <h2 class="angled">Story-driven exploration in a fully destructable world</h2>
     <div class="slim">
       <div class="video">
-        <iframe width="1280" height="720" src="https://www.youtube.com/embed/SeMJ9m7zFJM?controls=1&amp;showinfo=0&amp;rel=0&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/FzMteaMVb5A?controls=1&amp;showinfo=0&amp;rel=0&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
       </div>
-
-      <div id="mc_embed_signup">
+      <div id="mc_embed_signup" class="angled">
       <form action="//cavesgame.us13.list-manage.com/subscribe/post?u=b1c03a8b9dad5e66ecc611e52&amp;id=6120a4f484" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
           <div id="mc_embed_signup_scroll">
         <label for="mce-EMAIL">Get Updated!</label>
@@ -28,19 +26,70 @@
       </form>
       </div>
       
-      <div class="box">
+      <div class="box angled">
         <p>Caves is a 2D mining and exploration game, but with triangles instead of squares. Forced underground by a devastating attack, you must explore a hidden world and build to survive. But these caves are not empty; the more you expand, the more you'll come into conflict with the strange creatures and communities around you.</p>
       </div>
-      <h2>Photos</h2>
-      <img src="img/caves-1-800x.png">
-      <p>oh no there is only one photo</p>
-      <h2>Stay in touch!</h2>
-      <p>Follow the creator on <a href="https://twitter.com/mgatland/">Twitter</a></p>
-      <!--<p>share by email, twitter, facebook, google plus or tumblr</p>-->
-      <a href="https://www.youtube.com/playlist?list=PLhfN_2j4oEez85kX-CavTwVBvXzBYGZ4N">DEVLOG</a> | <a href="/presskit">PRESSKIT</a> | <a href="mailto:hi@mgatland.com">CONTACT US</a>
-      <p>such a good webpage let's give him our money</p>
+      <h2 class="angled">Screenshots</h2>
+    </div>
+    <div class="thumbs">
+      <img src="img/screenshots/thumbs/caves1.jpg">
+      <img src="img/screenshots/thumbs/caves2.jpg">
+      <img src="img/screenshots/thumbs/caves5.jpg">
+      <img src="img/screenshots/thumbs/caves4.jpg">
+      <img src="img/screenshots/thumbs/caves6.jpg">
+      <img src="img/screenshots/thumbs/caves7.jpg">
+      <img src="img/screenshots/thumbs/caves8.jpg">
+      <img src="img/screenshots/thumbs/caves9.jpg">
+      <!--<img src="img/screenshots/thumbs/caves4.jpg">-->
+    </div>
+    <img class="display-selected-img" src="img/screenshots/caves1.png">
+    <div class="content">
+      <div class="slim">
+      <div class="angled">
+        <h2>Stay in touch!</h2>
+        <p>Follow the creator on <a href="https://twitter.com/mgatland/" target="_blank">Twitter</a></p>
+        <!--<p>share by email, twitter, facebook, google plus or tumblr</p>-->
+        <a href="https://www.youtube.com/playlist?list=PLhfN_2j4oEez85kX-CavTwVBvXzBYGZ4N" target="_blank">DEVLOG</a> | <a href="/presskit" target="_blank">PRESSKIT</a> | <a href="mailto:hi@mgatland.com">CONTACT US</a>
+        <p>such a good webpage let's give him our money</p>
+      </div>
+      </div>
     </div>
   </div>
   <script src="js/background.js"></script>
+  <script>
+//matches polyfill
+if (!Element.prototype.matches) {
+    Element.prototype.matches = 
+        Element.prototype.matchesSelector || 
+        Element.prototype.mozMatchesSelector ||
+        Element.prototype.msMatchesSelector || 
+        Element.prototype.oMatchesSelector || 
+        Element.prototype.webkitMatchesSelector ||
+        function(s) {
+            var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+                i = matches.length;
+            while (--i >= 0 && matches.item(i) !== this) {}
+            return i > -1;            
+        };
+}
+//delegate utility, like in jquery
+function delegate (el, selector, handler) {
+  el.addEventListener("click", function(e) {
+      for (var target=e.target; target && target!=this; target=target.parentNode) {
+          if (target.matches(selector)) {
+              handler.call(target, e);
+              break;
+          }
+      }
+  }, false);
+}
+
+//end of utilities and polyfills
+
+function imgSelected(e) {
+  document.querySelector(".display-selected-img").src = this.src.replace("/thumbs/", "/").replace("jpg", "png");
+}
+delegate(document.querySelector(".thumbs"), "img", imgSelected);
+  </script>
 </body>
 </html>
