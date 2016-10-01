@@ -23,21 +23,40 @@ var colors = [
 "rgb(136, 153, 218)"
           ]
   var jiggles = [];
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < 29; i++) {
     jiggles[i] = Math.floor(Math.random() * maxJiggle * 2) - maxJiggle;
   }
+
+
+function getDocumentHeight () {
+  var B = document.body,
+      H = document.documentElement,
+      height
+
+  if (typeof document.height !== 'undefined') {
+      height = document.height // For webkit browsers
+  } else {
+      height = Math.max( B.scrollHeight, B.offsetHeight,H.clientHeight, H.scrollHeight, H.offsetHeight );
+  }
+  return height;
+}
 
   var canvas = document.getElementById('canvas'),
   ctx = canvas.getContext('2d');
   window.addEventListener('resize', resizeCanvas, false);
   function resizeCanvas() {
-    if (canvas.width < window.innerWidth || canvas.height < window.innerHeight) {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      drawStuff();         
+    var documentHeight = getDocumentHeight();
+    var documentWidth = document.documentElement.clientWidth || document.body.clientWidth;
+    if (canvas.width != documentWidth || canvas.height != documentHeight) {
+      canvas.width = documentWidth;
+      canvas.height = documentHeight;
+      drawStuff();
     }
   }
-  resizeCanvas();
+  window.addEventListener("load", function () {
+    console.log("forcing background redraw on load");
+    resizeCanvas();
+  }, false);
   function hash(x) {
     x = ((x >> 16) ^ x) * 0x45d9f3b;
     x = ((x >> 16) ^ x) * 0x45d9f3b;
@@ -50,10 +69,10 @@ var colors = [
   }
   function jiggle(x, y) {
     var i = 7 + 11 * x;
-    i = 7 * i + y;
+    i = 7 * i + 37 * y;
     i = Math.floor(i % jiggles.length);
     var j = 13 + 37 * x;
-    j = j * 37 + y;
+    j = j * 37 + 7 * y;
     j = Math.floor(j % jiggles.length);
     if (i < 0) i = -i;
     if (j < 0) j = -j;
@@ -81,11 +100,15 @@ var colors = [
     this.p = [];
     for (var i = 0; i < 3; i++) { this.p[i] = {x:0, y:0}};
   }
+
+  var firstTriRowY = 358;
+  var oceanThickness = 200;
+  var sunsetStripWidth = (firstTriRowY - oceanThickness) / 5;
   function drawMapCell(i, isOutline) {
     var xi = (i % trisAcross)
     var yi = (Math.floor(i / trisAcross));
     var x = Math.floor(xi * triWidth / 2 - triWidth);
-    var y = yi * triHeight - maxJiggle;
+    var y = yi * triHeight - maxJiggle + firstTriRowY;
     var up = (xi % 2 == (yi % 2));
     var tri = new Tri();
     if (up === true) {
@@ -99,9 +122,14 @@ var colors = [
     }
     drawTri(tri, i, isOutline);
   }
+
   function drawStuff() {
+    //draw sunset
+
+
+    //draw triangles
     trisAcross = Math.ceil(canvas.width / triWidth * 2 + 3);
-    var trisDown = Math.ceil(canvas.height / triHeight + 1);
+    var trisDown = Math.ceil((canvas.height - firstTriRowY) / triHeight + 1);
     for (var i = 0; i < trisAcross * trisDown; i++) {
       drawMapCell(i, true);
     }

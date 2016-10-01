@@ -5,32 +5,36 @@
   <title>Caves</title>
   <link rel="stylesheet" href="css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <canvas id="canvas"></canvas>
   <div class="content">
-    <img src="img/caveslogo.svg" class="logo">
+    <header>
+      <img src="img/caveslogo.svg" class="logo">
+    </header>
     <h2 class="angled">Story-driven exploration in a fully destructable world</h2>
     <div class="slim">
       <div class="video">
         <iframe width="1280" height="720" src="https://www.youtube.com/embed/FzMteaMVb5A?controls=1&amp;showinfo=0&amp;rel=0&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
       </div>
-      <div id="mc_embed_signup" class="angled">
-      <form action="//cavesgame.us13.list-manage.com/subscribe/post?u=b1c03a8b9dad5e66ecc611e52&amp;id=6120a4f484" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-        <label for="mce-EMAIL">Get Updated!</label>
-        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b1c03a8b9dad5e66ecc611e52_6120a4f484" tabindex="-1" value=""></div>
-          <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-          </div>
-      </form>
-      </div>
-      
-      <div class="box angled">
-        <p>Caves is a 2D mining and exploration game, but with triangles instead of squares. Forced underground by a devastating attack, you must explore a hidden world and build to survive. But these caves are not empty; the more you expand, the more you'll come into conflict with the strange creatures and communities around you.</p>
-      </div>
-      <h2 class="angled">Screenshots</h2>
     </div>
+    <div id="mc_embed_signup" class="angled">
+    <form action="//cavesgame.us13.list-manage.com/subscribe/post?u=b1c03a8b9dad5e66ecc611e52&amp;id=6120a4f484" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+      <label for="mce-EMAIL">Get Updated!</label>
+      <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b1c03a8b9dad5e66ecc611e52_6120a4f484" tabindex="-1" value=""></div>
+        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+        </div>
+    </form>
+    </div>
+      
+    <div class="angled">
+      Caves is a 2D mining and exploration game, but with triangles instead of squares. Forced underground by a devastating attack, you must explore a hidden world and build to survive. But these caves are not empty; the more you expand, the more you'll come into conflict with the strange creatures and communities around you.
+    </div>
+    <h2 class="angled">Screenshots</h2>
+
     <div class="thumbs">
       <img src="img/screenshots/thumbs/caves1.jpg">
       <img src="img/screenshots/thumbs/caves2.jpg">
@@ -55,7 +59,6 @@
       </div>
     </div>
   </div>
-  <script src="js/background.js"></script>
   <script>
 //matches polyfill
 if (!Element.prototype.matches) {
@@ -91,5 +94,6 @@ function imgSelected(e) {
 }
 delegate(document.querySelector(".thumbs"), "img", imgSelected);
   </script>
+  <script src="js/background.js"></script>
 </body>
 </html>

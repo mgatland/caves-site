@@ -8,11 +8,20 @@ html, body {
 }
 canvas {
 	display: block;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 0
 }
+
+header {
+	/*margin-bottom: -54px;
+	background-color: rgb(6,5,34);
+	baackground: url("/img/header.png") center repeat-x;
+    background-size: auto 100%;
+    border-bottom: 1px solid rgb(6,5,34);*/
+}
+
 .content {
 	display: block;
 	position: absolute;
@@ -21,24 +30,27 @@ canvas {
 	width: 100%;
 }
 .logo {
-	margin-top: 96px;
-	margin-bottom: 50px;
+	margin-top: 90px;
+	margin-bottom: 90px;
 	width:500px;
 	max-width:90%;
 }
 h2 {
 	font-size: 20px;
-	margin-bottom: 20px;
-	margin: 20px auto;
 	padding: 0px 10px;
 }
 .angled {
 	max-width: 650px;
 	border-left: 15px solid transparent;
 	border-right: 15px solid transparent;
-  padding: 20px;
-  border-image: url("/img/border.svg") 20 fill;
+	padding: 20px;
+	margin: 20px auto;
+	border-image: url("/img/border.svg") 20 fill;
 }
+.angled.solid {
+	border-image: url("/img/border-solid.svg") 20 fill;
+}
+
 .slim {
 	display: inline-block;
 	width: 650px;
@@ -47,11 +59,12 @@ h2 {
 .video {
 	display: inline-block;
 	position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 0px;
-  height: 0;
-  background-color: black;
-  width: 100%;
+	padding-bottom: 56.25%;
+	padding-top: 0px;
+	height: 0;
+	background-color: black;
+	width: 100%;
+	border: 2px solid white;
 }
 iframe {
 	position: absolute;
@@ -60,36 +73,58 @@ iframe {
 	width: 100%;
 	height:100%;
 }
-.box {
-	padding: 20px;
-	margin:20px;
-}
+
 img {
 	max-width: 100%;
 }
+
 a {
 	color: #b4edff; /* light blue */
 }
 
 .thumbs {
-	background-color: rgb(6,5,34);
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white; /* shows through thumb on hover */
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
-  align-items: center;
+	align-items: center;
+	max-width: 1000px;
 }
 .thumbs img {
-	width: 11%;
+	box-sizing: border-box;
+	width: 12.5%;
 	align-self: center;
 	flex: 0 0 auto;
 	border: 1px solid white;
 	cursor: pointer;
 }
+
+@media (max-width: 500px) {
+	.thumbs img {
+		width: 25%;
+	}
+	.logo {
+		margin-bottom: 110px;
+	}
+}
+
+@media (max-width: 400px) {
+	.logo {
+		margin-bottom: 130px;
+	}
+}
+
 .thumbs img:hover {
 	border: 1px solid yellow;
+	opacity: 0.75;
 }
+
 .display-selected-img {
-	border-top: 5px solid white;
-	border-bottom: 5px solid white;
+	box-sizing: border-box;
+	width: 1000px;
+	border: 2px solid white;
 }
 
 /* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
