@@ -11,7 +11,17 @@ canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 0
+}
+
+.top-background-image {
+	background: url("/img/header.png") center repeat-x;
+	background-size: auto 100%;
+
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 390px;
 }
 
 header {
@@ -40,15 +50,22 @@ h2 {
 	padding: 0px 10px;
 }
 .angled {
-	max-width: 650px;
+	box-sizing: border-box;
+	width: 680px;
+	max-width: 90%;
 	border-left: 15px solid transparent;
 	border-right: 15px solid transparent;
 	padding: 20px;
 	margin: 20px auto;
 	border-image: url("/img/border.svg") 20 fill;
 }
-.angled.solid {
-	border-image: url("/img/border-solid.svg") 20 fill;
+.angled-x2 {
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+}
+.angled-x4 {
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent;
 }
 
 .slim {
@@ -90,7 +107,8 @@ a {
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	max-width: 1000px;
+	width: 1000px;
+	max-width: 90%;
 }
 .thumbs img {
 	box-sizing: border-box;
@@ -124,6 +142,7 @@ a {
 .display-selected-img {
 	box-sizing: border-box;
 	width: 1000px;
+	max-width: 90%;
 	border: 2px solid white;
 }
 
