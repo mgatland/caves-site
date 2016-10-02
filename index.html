@@ -89,6 +89,7 @@ function delegate (el, selector, handler) {
 //end of utilities and polyfills
 
 function imgSelected(e) {
+  document.querySelector(".display-selected-img").src = "/img/screenshots/loading.png";
   document.querySelector(".display-selected-img").src = this.src.replace("/thumbs/", "/").replace("jpg", "png");
 }
 delegate(document.querySelector(".thumbs"), "img", imgSelected);
