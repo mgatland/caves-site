@@ -31,8 +31,8 @@
      id="namedview3023"
      showgrid="false"
      inkscape:zoom="1"
-     inkscape:cx="724.93988"
-     inkscape:cy="-19.58988"
+     inkscape:cx="514.76237"
+     inkscape:cy="155.87821"
      inkscape:window-x="1912"
      inkscape:window-y="28"
      inkscape:window-maximized="1"
@@ -75,13 +75,13 @@ Created by potrace 1.12, written by Peter Selinger 2001-2015
      sodipodi:nodetypes="ccccc" />
   <path
      style="fill:#ffffff;stroke:none"
-     d="m 48,64 -48,96 32,64 64,0 16,-32 -64,0 -16,-32 32,-64 96,0 16,-32 z"
+     d="m 48,64 -48,96 32,64 64,0 16,-32 -64,0 -16,-32 32,-64 96,0 -16,-32 z"
      id="path3120"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccccccccccc" />
   <path
      style="fill:#ffffff;stroke:none"
-     d="m 464,64 -64,128 16,32 96,0 16,-32 -96,0 16,-32 64,0 16,-32 -64,0 16,-32 64,0 16,-32 z"
+     d="m 464,64 -64,128 16,32 96,0 16,-32 -96,0 16,-32 64,0 16,-32 -64,0 16,-32 64,0 -16,-32 z"
      id="path3116"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccccccccccccc" />
@@ -94,7 +94,7 @@ Created by potrace 1.12, written by Peter Selinger 2001-2015
      sodipodi:nodetypes="ccccccccccccccc" />
   <path
      style="fill:#ffffff;stroke:none"
-     d="m 304,63.975 -32,0 80,160 80,-160 -32,0 -48,96 z"
+     d="M 304,65 288,96 352,223 416,96 400,65 352,159 z"
      id="path3112"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccccccc" />

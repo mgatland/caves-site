@@ -1,9 +1,31 @@
 "use strict";
-var triWidth = 48;
-var triHeight = 48;
-var maxJiggle = 12;
-var jiggleSeed = 0;
+var scale = 2
+var triWidth = 48*scale;
+var triHeight = 48*scale;
+var maxJiggle = 12*scale;
+var jiggleSeed = 0
+var portrait = true
 var trisAcross;
+
+var width = 4967
+var height = 7022
+
+var sunHeight = 1800
+var skyThickness = Math.floor(height*0.67)
+var logoY = (skyThickness - sunHeight) / 2 - 400
+var sunLineWidth = 8
+
+var firstTriRowY = 358
+
+var sunColor = "rgb(255, 255, 0)"
+var sunReflectionColor = "rgb(88, 71, 103)"
+
+
+var ocean = true
+var tris = false
+
+var oceanColor = "rgb(37, 15, 135)"
+
 var colors = [
 "rgb(145, 155, 228)",
 "rgb(160, 171, 229)",
@@ -20,42 +42,38 @@ var colors = [
 "rgb(134, 145, 222)",
 "rgb(145, 155, 227)",
 "rgb(132, 150, 219)",
-"rgb(136, 153, 218)"
-          ]
+"rgb(136, 153, 218)"]
+
+var skyColors = [
+"rgb(31, 13, 37)",
+"rgb(52, 19, 39)",
+"rgb(73, 26, 41)",
+"rgb(94, 32, 43)",
+"rgb(115, 39, 45)",
+"rgb(136, 45, 47)",
+"rgb(157,52,50)",
+"rgb(178,58,52)",
+"rgb(199,64,54)",
+"rgb(220, 71, 56)"]
+
   var jiggles = [];
   for (var i = 0; i < 29; i++) {
     jiggles[i] = Math.floor(Math.random() * maxJiggle * 2) - maxJiggle;
   }
 
-
-function getDocumentHeight () {
-  var B = document.body,
-      H = document.documentElement,
-      height
-
-  if (typeof document.height !== 'undefined') {
-      height = document.height // For webkit browsers
-  } else {
-      height = Math.max( B.scrollHeight, B.offsetHeight,H.clientHeight, H.scrollHeight, H.offsetHeight );
-  }
-  return height;
-}
-
   var canvas = document.getElementById('canvas'),
   ctx = canvas.getContext('2d');
-  window.addEventListener('resize', resizeCanvas, false);
-  function resizeCanvas() {
-    var documentHeight = getDocumentHeight();
-    var documentWidth = document.documentElement.clientWidth || document.body.clientWidth;
-    if (canvas.width != documentWidth || canvas.height != documentHeight) {
-      canvas.width = documentWidth;
-      canvas.height = documentHeight;
-      drawStuff();
-    }
+  if (!portrait) {
+    var temp = width
+    width = height
+    height = temp
   }
+  canvas.width = width;
+  canvas.height = height;
+
   window.addEventListener("load", function () {
     console.log("forcing background redraw on load");
-    resizeCanvas();
+    drawStuff();
   }, false);
   function hash(x) {
     x = ((x >> 16) ^ x) * 0x45d9f3b;
@@ -101,9 +119,6 @@ function getDocumentHeight () {
     for (var i = 0; i < 3; i++) { this.p[i] = {x:0, y:0}};
   }
 
-  var firstTriRowY = 358;
-  var oceanThickness = 200;
-  var sunsetStripWidth = (firstTriRowY - oceanThickness) / 5;
   function drawMapCell(i, isOutline) {
     var xi = (i % trisAcross)
     var yi = (Math.floor(i / trisAcross));
@@ -124,16 +139,65 @@ function getDocumentHeight () {
   }
 
   function drawStuff() {
+    console.log("drawing")
     //draw sunset
-
-
-    //draw triangles
-    trisAcross = Math.ceil(canvas.width / triWidth * 2 + 3);
-    var trisDown = Math.ceil((canvas.height - firstTriRowY) / triHeight + 1);
-    for (var i = 0; i < trisAcross * trisDown; i++) {
-      drawMapCell(i, true);
+    var skyColorWidth = (skyThickness) / skyColors.length;
+    for (var i = 0; i < skyColors.length; i++) {
+      ctx.fillStyle = skyColors[i]
+      ctx.fillRect(0, skyColorWidth * (i), canvas.width, skyColorWidth+1) 
     }
-    for (var i = 0; i < trisAcross * trisDown; i++) {
-      drawMapCell(i, false);
+    //sun
+    var horizonY = skyColorWidth * skyColors.length
+    ctx.fillStyle = sunColor
+    ctx.fillRect(0, horizonY, canvas.width, sunLineWidth) 
+    ctx.beginPath()
+    ctx.moveTo(width/2, horizonY - sunHeight)
+    ctx.lineTo(width/2-sunHeight, horizonY)
+    ctx.lineTo(width/2+sunHeight, horizonY)
+    ctx.closePath()
+    ctx.fill()
+
+    if (ocean) {
+      ctx.fillStyle = oceanColor
+      ctx.fillRect(0, horizonY + sunLineWidth, width, height - horizonY + sunLineWidth)
     }
+
+    //reflection
+    ctx.fillStyle = sunReflectionColor
+    ctx.beginPath()
+    ctx.moveTo(width/2, horizonY + sunLineWidth + sunHeight * 2)
+    ctx.lineTo(width/2+sunHeight, horizonY + sunLineWidth)
+    ctx.lineTo(width/2-sunHeight, horizonY + sunLineWidth)
+    ctx.closePath()
+    ctx.fill()
+
+    if (tris) {
+      //draw triangles
+      trisAcross = Math.ceil(canvas.width / triWidth * 2 + 3);
+      var trisDown = Math.ceil((canvas.height - firstTriRowY) / triHeight + 1);
+      for (var i = 0; i < trisAcross * trisDown; i++) {
+        drawMapCell(i, true);
+      }
+      for (var i = 0; i < trisAcross * trisDown; i++) {
+        drawMapCell(i, false);
+      }
+    }
+
+    //draw sprites
+    var logo = document.querySelector(".logo")
+    var logoScale = width/logo.naturalWidth*0.6
+    var logoWidth = logo.naturalWidth*logoScale
+    var logoHeight = logo.naturalHeight*logoScale
+    ctx.drawImage(logo,width/2-logoWidth/2,logoY, logoWidth, logoHeight)
+
+    var ship = document.querySelector(".ship-dark")
+    var shipScale = 10
+    var shipWidth = ship.naturalWidth*shipScale
+    var shipHeight = ship.naturalHeight*shipScale
+    ctx.drawImage(ship,width/2-shipWidth/2-80,skyThickness - sunHeight / 2, shipWidth, shipHeight)
+
+    ctx.fillStyle = "white"
+    ctx.font = "100px Open Sans"
+    ctx.textAlign = "center"
+    ctx.fillText("www.cavesgame.com", width/2, height- 400)
   }
