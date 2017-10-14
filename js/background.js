@@ -1,4 +1,6 @@
 "use strict";
+var businessCard = true; //otherwise, poster
+
 var scale = 2
 var triWidth = 48*scale;
 var triHeight = 48*scale;
@@ -7,12 +9,23 @@ var jiggleSeed = 0
 var portrait = true
 var trisAcross;
 
-var width = 4967
-var height = 7022
+if (businessCard===true) {
+  //size inside bleed: 1050 x 600
+  var width = 635
+  var height = 1085
+  var fontSize = 32
+  var fontXAlignHack = -5 //hack to line it up with the sun's reflection
+} else {
+  var width = 4967
+  var height = 7022
+  var fontSize = 100  
+  var fontXAlignHack = 0
+}
 
-var sunHeight = 1800
 var skyThickness = Math.floor(height*0.67)
-var logoY = (skyThickness - sunHeight) / 2 - 400
+var sunHeight = Math.round(width * 0.3624)
+console.log("Sun height: " + sunHeight)
+var logoY = (skyThickness - sunHeight) / 2 - 400*height/7022
 var sunLineWidth = 8
 
 var firstTriRowY = 358
@@ -188,16 +201,18 @@ var skyColors = [
     var logoScale = width/logo.naturalWidth*0.6
     var logoWidth = logo.naturalWidth*logoScale
     var logoHeight = logo.naturalHeight*logoScale
+    console.log("logo height: " + logoHeight)
     ctx.drawImage(logo,width/2-logoWidth/2,logoY, logoWidth, logoHeight)
 
     var ship = document.querySelector(".ship-dark")
-    var shipScale = 10
+    var shipScale = 10 * width / 4967
     var shipWidth = ship.naturalWidth*shipScale
     var shipHeight = ship.naturalHeight*shipScale
-    ctx.drawImage(ship,width/2-shipWidth/2-80,skyThickness - sunHeight / 2, shipWidth, shipHeight)
+    ctx.drawImage(ship,width/2-shipWidth/2-8*shipScale,skyThickness - sunHeight / 2, shipWidth, shipHeight)
 
     ctx.fillStyle = "white"
-    ctx.font = "100px Open Sans"
+    ctx.font = fontSize + "px Open Sans"
     ctx.textAlign = "center"
-    ctx.fillText("www.cavesgame.com", width/2, height- 400)
+    ctx.fillText("www.cavesgame.com", width/2+fontXAlignHack, Math.floor(height*0.943))
+    console.log("drawing complete")
   }
