@@ -9,17 +9,35 @@ var jiggleSeed = 0
 var portrait = true
 var trisAcross;
 
+var footerText = "www.cavesgame.com"
+
 if (businessCard===true) {
-  //size inside bleed: 1050 x 600
+
+  /*--banner express--
+  var dpi = 300
+  var dotsPerMM = dpi / 25.4
+  var width = dotsPerMM * 60
+  var height = dotsPerMM * 95
+  var fontHeight = 0.90
+  var fontSize = 33
+  var fontXAlignHack = -5
+  //*/
+
+  //*--vistaprint--
+  //size inside bleed: 1050 x 600  
   var width = 635
   var height = 1085
-  var fontSize = 32
+  var fontHeight = 0.93
+  var fontSize = 33
   var fontXAlignHack = -5 //hack to line it up with the sun's reflection
+  //*/
+
 } else {
   var width = 4967
   var height = 7022
   var fontSize = 100  
   var fontXAlignHack = 0
+  var fontHeight = 0.943
 }
 
 var skyThickness = Math.floor(height*0.67)
@@ -213,6 +231,6 @@ var skyColors = [
     ctx.fillStyle = "white"
     ctx.font = fontSize + "px Open Sans"
     ctx.textAlign = "center"
-    ctx.fillText("www.cavesgame.com", width/2+fontXAlignHack, Math.floor(height*0.943))
+    ctx.fillText(footerText, width/2+fontXAlignHack, Math.floor(height*fontHeight))
     console.log("drawing complete")
   }
