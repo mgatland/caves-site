@@ -1,5 +1,7 @@
 "use strict";
-var businessCard = true; //otherwise, poster
+//fixme: the horizon thickness shoudl be doubled on 300dpi-a0
+//Also: note that you have to change the DPI in paint.net, press Ctrl-R and set it to 300
+var mode = "300dpi-a0"; //"poster", "businesscard"
 
 var scale = 2
 var triWidth = 48*scale;
@@ -11,7 +13,7 @@ var trisAcross;
 
 var footerText = "www.cavesgame.com"
 
-if (businessCard===true) {
+if (mode==="businesscard") {
 
   /*--banner express--
   var dpi = 300
@@ -32,10 +34,16 @@ if (businessCard===true) {
   var fontXAlignHack = -5 //hack to line it up with the sun's reflection
   //*/
 
-} else {
+} else if (mode==="poster") {
   var width = 4967
   var height = 7022
   var fontSize = 100  
+  var fontXAlignHack = 0
+  var fontHeight = 0.943
+} else if (mode==="300dpi-a0") {
+  var width = 9933
+  var height = 14043
+  var fontSize = 200
   var fontXAlignHack = 0
   var fontHeight = 0.943
 }
