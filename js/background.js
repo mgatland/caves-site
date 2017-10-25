@@ -53,7 +53,7 @@ function getDocumentHeight () {
       drawStuff();
     }
   }
-  window.addEventListener("load", function () {
+  window.addEventListener("DOMContentLoaded", function () {
     console.log("forcing background redraw on load");
     resizeCanvas();
   }, false);
