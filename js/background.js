@@ -54,9 +54,16 @@ function getDocumentHeight () {
     }
   }
   window.addEventListener("DOMContentLoaded", function () {
-    console.log("forcing background redraw on load");
+    console.log("draw background");
     resizeCanvas();
   }, false);
+
+  window.addEventListener("load", function () {
+    console.log("redraw background now images have filled out the page");
+    resizeCanvas();
+  }, false);
+  
+
   function hash(x) {
     x = ((x >> 16) ^ x) * 0x45d9f3b;
     x = ((x >> 16) ^ x) * 0x45d9f3b;
