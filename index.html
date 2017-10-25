@@ -6,6 +6,11 @@
   <link rel="stylesheet" href="css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/photoswipe/photoswipe.css"> 
+  <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css"> 
+  <script src="/photoswipe/photoswipe.min.js"></script> 
+  <script src="/photoswipe/photoswipe-ui-default.min.js"></script> 
 </head>
 <body>
   <div class="top-background-image"></div>
@@ -18,38 +23,58 @@
         <iframe width="1280" height="720" src="https://www.youtube.com/embed/FzMteaMVb5A?controls=1&amp;showinfo=0&amp;rel=0&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
-    <div id="mc_embed_signup" class="angled angled-x2">
-    <form action="//cavesgame.us13.list-manage.com/subscribe/post?u=b1c03a8b9dad5e66ecc611e52&amp;id=6120a4f484" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-        <div id="mc_embed_signup_scroll">
-      <label for="mce-EMAIL">Get Updated!</label>
-      <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b1c03a8b9dad5e66ecc611e52_6120a4f484" tabindex="-1" value=""></div>
-        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-        </div>
-    </form>
-    </div>
-      
-    <div class="angled angled-x2">
-      Caves is a 2D mining and exploration game, but with triangles instead of squares. Forced underground by a devastating attack, you must explore a hidden world and build to survive. But these caves are not empty; the more you expand, the more you'll come into conflict with the strange creatures and communities around you.
-    </div>
-    <h2 class="angled">Screenshots</h2>
 
-    <div class="thumbs">
-      <img src="img/screenshots/thumbs/caves1.jpg">
-      <img src="img/screenshots/thumbs/caves2.jpg">
-      <img src="img/screenshots/thumbs/caves5.jpg">
-      <img src="img/screenshots/thumbs/caves4.jpg">
-      <img src="img/screenshots/thumbs/caves6.jpg">
-      <img src="img/screenshots/thumbs/caves7.jpg">
-      <img src="img/screenshots/thumbs/caves8.jpg">
-      <img src="img/screenshots/thumbs/caves9.jpg">
-      <!--<img src="img/screenshots/thumbs/caves4.jpg">-->
+    <div id="mc_embed_signup" class="angled angled-x2">
+      <form action="//cavesgame.us13.list-manage.com/subscribe/post?u=b1c03a8b9dad5e66ecc611e52&amp;id=6120a4f484" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+        <label for="mce-EMAIL">Get Updated!</label>
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b1c03a8b9dad5e66ecc611e52_6120a4f484" tabindex="-1" value=""></div>
+          <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          </div>
+      </form>
+      </div>
+
+    <div class="angled angled-x4">
+
+      <p>Caves is a story-driven mining game in a fully destructible world. Cut through solid rock to uncover lost technology and ancient creatures. Build a base, make strange friends and find a way to reclaim your lost home.</p>
+
+      <h3>Key Features</h3>
+
+          <ul>
+            <li>Explore a fully destructible polygon world</li>
+            <li>Befriend strange creatures and learn their secrets</li>
+            <li>Develop new technologies to build your base</li>
+            <li>Follow the main quest to save your people, or freely explore and make your own story</li>
+          </ul>
     </div>
-    <img class="display-selected-img" src="img/screenshots/caves1.png">
+
+    <img class="big-image" src="/img/screenshots/caves1.png">
+
+    <div class="angled angled-x4">
+    
+      <h3>Platform</h3>
+      <p>PC and Mac.</p>
+    </div>
+
+    <div class="angled angled-x4">
+      <h3>Screenshots</h3>
+
+      <div class="thumbs">
+        <img src="img/screenshots/thumbs/caves1.jpg">
+        <img src="img/screenshots/thumbs/caves2.jpg">
+        <img src="img/screenshots/thumbs/caves5.jpg">
+        <img src="img/screenshots/thumbs/caves4.jpg">
+        <img src="img/screenshots/thumbs/caves6.jpg">
+        <img src="img/screenshots/thumbs/caves7.jpg">
+        <img src="img/screenshots/thumbs/caves8.jpg">
+        <img src="img/screenshots/thumbs/caves9.jpg">
+      </div>
+    </div>
     <div class="content">
       <div class="slim">
       <div class="angled angled-x4">
-        <h2>Stay in touch!</h2>
+        <h3>Stay in touch!</h3>
         <p>Follow the creator on <a href="https://twitter.com/mgatland/" target="_blank">Twitter</a></p>
         <!--<p>share by email, twitter, facebook, google plus or tumblr</p>-->
         <a href="https://www.youtube.com/playlist?list=PLhfN_2j4oEez85kX-CavTwVBvXzBYGZ4N" target="_blank">DEVLOG</a> | <a href="/presskit" target="_blank">PRESSKIT</a> | <a href="mailto:hi@mgatland.com">CONTACT US</a>
@@ -58,6 +83,70 @@
       </div>
     </div>
   </div>
+<!--photoswipe-->
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end of photoswipe HTML-->
   <script>
 //matches polyfill
 if (!Element.prototype.matches) {
@@ -88,11 +177,29 @@ function delegate (el, selector, handler) {
 
 //end of utilities and polyfills
 
+function getFullImage(thumbSrc) {
+  return thumbSrc.replace("/thumbs/", "/").replace("jpg", "png")
+}
+
+//photoswipe init
+var pswpElement = document.querySelectorAll('.pswp')[0];
+document.querySelector(".thumbs").each
+var items = []
+document.querySelectorAll(".thumbs img").forEach(
+  function (img) {
+    img.setAttribute('data-index', items.length);
+    items.push({src:getFullImage(img.src), w:1920, h:1017})
+  } 
+)
+
 function imgSelected(e) {
-  document.querySelector(".display-selected-img").src = "/img/screenshots/loading.png";
-  document.querySelector(".display-selected-img").src = this.src.replace("/thumbs/", "/").replace("jpg", "png");
+  var index = parseInt(e.srcElement.getAttribute('data-index'))
+  var options = {index: index, history:false, shareEl:false}
+  var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+  gallery.init();
 }
 delegate(document.querySelector(".thumbs"), "img", imgSelected);
+
   </script>
   <script src="js/background.js"></script>
 </body>
