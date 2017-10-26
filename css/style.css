@@ -4,22 +4,3 @@ html, body {
 	color: white;
 	font-family: 'Open Sans', sans-serif;
 }
-canvas {
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.content {
-	display: block;
-	position: absolute;
-	z-index: 1;
-	text-align: center;
-	width: 100%;
-}
-.logo {
-	margin-top: 90px;
-	margin-bottom: 90px;
-	width:500px;
-	max-width:90%;
-}

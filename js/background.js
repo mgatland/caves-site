@@ -13,52 +13,52 @@ var trisAcross;
 
 var footerText = "www.cavesgame.com"
 
-if (mode==="businesscard") {
+var dpi, dotsPerMM, width, height,
+  fontHeight, fontSize, fontXAlignHack
 
-  /*--banner express--
-  var dpi = 300
-  var dotsPerMM = dpi / 25.4
-  var width = dotsPerMM * 60
-  var height = dotsPerMM * 95
-  var fontHeight = 0.90
-  var fontSize = 33
-  var fontXAlignHack = -5
-  //*/
-
-  //*--vistaprint--
-  //size inside bleed: 1050 x 600  
-  var width = 635
-  var height = 1085
-  var fontHeight = 0.93
-  var fontSize = 33
-  var fontXAlignHack = -5 //hack to line it up with the sun's reflection
-  //*/
-
-} else if (mode==="poster") {
-  var width = 4967
-  var height = 7022
-  var fontSize = 100  
-  var fontXAlignHack = 0
-  var fontHeight = 0.943
-} else if (mode==="300dpi-a0") {
-  var width = 9933
-  var height = 14043
-  var fontSize = 200
-  var fontXAlignHack = 0
-  var fontHeight = 0.943
+function drawCardsBannerExpress () {
+  dpi = 300
+  dotsPerMM = dpi / 25.4
+  width = dotsPerMM * 60
+  height = dotsPerMM * 95
+  fontHeight = 0.90
+  fontSize = 33
+  fontXAlignHack = -5
+  drawCanvas()
 }
 
-var skyThickness = Math.floor(height*0.67)
-var sunHeight = Math.round(width * 0.3624)
-console.log("Sun height: " + sunHeight)
-var logoY = (skyThickness - sunHeight) / 2 - 400*height/7022
-var sunLineWidth = 8
+function drawVistaprintCards () {
+  //size inside bleed: 1050 x 600  
+  width = 635
+  height = 1085
+  fontHeight = 0.93
+  fontSize = 33
+  fontXAlignHack = -5 //hack to line it up with the sun's reflection
+  drawCanvas()
+}
+
+function drawPoster300dpiA0 () {
+  width = 9933
+  height = 14043
+  fontSize = 200
+  fontXAlignHack = 0
+  fontHeight = 0.943
+  drawCanvas()
+}
+
+function drawPoster() {
+  width = 4967
+  height = 7022
+  fontSize = 100  
+  fontXAlignHack = 0
+  fontHeight = 0.943
+  drawCanvas()  
+}
 
 var firstTriRowY = 358
 
 var sunColor = "rgb(255, 255, 0)"
 var sunReflectionColor = "rgb(88, 71, 103)"
-
 
 var ocean = true
 var tris = false
@@ -100,20 +100,6 @@ var skyColors = [
     jiggles[i] = Math.floor(Math.random() * maxJiggle * 2) - maxJiggle;
   }
 
-  var canvas = document.getElementById('canvas'),
-  ctx = canvas.getContext('2d');
-  if (!portrait) {
-    var temp = width
-    width = height
-    height = temp
-  }
-  canvas.width = width;
-  canvas.height = height;
-
-  window.addEventListener("load", function () {
-    console.log("forcing background redraw on load");
-    drawStuff();
-  }, false);
   function hash(x) {
     x = ((x >> 16) ^ x) * 0x45d9f3b;
     x = ((x >> 16) ^ x) * 0x45d9f3b;
@@ -177,8 +163,25 @@ var skyColors = [
     drawTri(tri, i, isOutline);
   }
 
-  function drawStuff() {
+  function drawCanvas() {
     console.log("drawing")
+
+    var canvas = document.getElementById('canvas'),
+    ctx = canvas.getContext('2d');
+    if (!portrait) {
+      var temp = width
+      width = height
+      height = temp
+    }
+    canvas.width = width;
+    canvas.height = height;
+
+    var skyThickness = Math.floor(height*0.67)
+    var sunHeight = Math.round(width * 0.3624)
+    console.log("Sun height: " + sunHeight)
+    var logoY = (skyThickness - sunHeight) / 2 - 400*height/7022
+    var sunLineWidth = 8
+
     //draw sunset
     var skyColorWidth = (skyThickness) / skyColors.length;
     for (var i = 0; i < skyColors.length; i++) {
