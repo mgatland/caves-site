@@ -22,6 +22,10 @@
   <canvas id="canvas"></canvas>
   <div class="content">
     <img src="img/caveslogo.svg" class="logo">
+    <div class="awards">
+      <img src="img/award-stugan.svg" class="award">
+      <img src="img/award-kiwigamestarter.svg" class="award">
+    </div>
     <h2 class="angled">Story-driven exploration in a fully destructible world</h2>
     <div class="slim">
       <div class="video">
@@ -83,7 +87,7 @@
         <h3>Stay in touch!</h3>
         <p>Follow the creator on <a href="https://twitter.com/mgatland/" target="_blank">Twitter</a></p>
         <!--<p>share by email, twitter, facebook, google plus or tumblr</p>-->
-        <a href="https://www.youtube.com/playlist?list=PLhfN_2j4oEez85kX-CavTwVBvXzBYGZ4N" target="_blank">DEVLOG</a> | <a href="/presskit" target="_blank">PRESSKIT</a> | <a href="mailto:hi@mgatland.com">CONTACT US</a>
+        <a href="https://www.youtube.com/playlist?list=PLhfN_2j4oEez85kX-CavTwVBvXzBYGZ4N" target="_blank">DEVLOG</a> | <a href="/press" target="_blank">PRESSKIT</a> | <a href="mailto:hi@mgatland.com">CONTACT US</a>
         <p>such a good webpage let's give him our money</p>
       </div>
     </div>
@@ -199,7 +203,17 @@ document.querySelectorAll(".thumbs img").forEach(
 
 function imgSelected(e) {
   var index = parseInt(e.srcElement.getAttribute('data-index'))
-  var options = {index: index, history:false, shareEl:false}
+  function thumbFunc () {
+    var thumbnail = e.srcElement;
+    var pageYScroll = window.pageYOffset || document.documentElement.scrollTop; 
+    var rect = thumbnail.getBoundingClientRect();
+    return {x:rect.left,y:rect.top + pageYScroll, w:rect.width*2}
+  }
+  var options = {index: index, 
+    getThumbBoundsFn:thumbFunc, 
+    history:false, shareEl:false, zoomEl: false, fullscreenEl: false,
+    counterEl: false,
+    showHideOpacity:true }
   var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
   gallery.init();
 }
