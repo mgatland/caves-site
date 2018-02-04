@@ -16,6 +16,13 @@ var footerText = "www.cavesgame.com"
 var dpi, dotsPerMM, width, height,
   fontHeight, fontSize, fontXAlignHack
 
+function draw1080p () {
+  width=1080
+  height=1920
+  footerText=""
+  drawCanvas()
+}
+
 function drawCardsBannerExpress () {
   dpi = 300
   dotsPerMM = dpi / 25.4
